@@ -25,7 +25,7 @@ end
 -- }
 miise.register_feature = function(name, feature_type, definition)
     assert(not miise.registered_features[name], ("Feature '%s' already exists."):format(name))
-    assert(miise.feature_types[feature_type], ("Type '%s' does not exist."):format(type))
+    assert(miise.feature_types[feature_type], ("Type '%s' does not exist."):format(feature_type))
     definition.name = name
     definition.type = feature_type
     definition.pos = miise.feature_types[feature_type].default
