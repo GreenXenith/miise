@@ -213,8 +213,10 @@ local actions = {
     end,
     feature = function(oldfeature, newfeature)
         local new = table.copy(miise.registered_features[newfeature])
-        new.pos = oldfeature.pos
-        new.color = oldfeature.color
+        if oldfeature then
+            new.pos = oldfeature.pos
+            new.color = oldfeature.color
+        end
         return new
     end,
     color = function(feature, color)
